@@ -1,0 +1,7 @@
+stages:
+  download_ERA5_CCF_sfc:
+    cmd: python src/era5_download_surface.py --output=./data/ERA5/ERA5_CCF_surface.nc
+    deps:
+    - src/era5_download_surface.py
+    outs:
+    - ./data/ERA5/ERA5_CCF_surface.nc
