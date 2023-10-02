@@ -1,0 +1,6 @@
+name: era5
+channels:
+  - conda-forge
+dependencies:
+  - cdsapi
+prefix: /Users/haukeschulz/mambaforge/envs/era5
