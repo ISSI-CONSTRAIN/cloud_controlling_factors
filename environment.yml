@@ -7,4 +7,5 @@ dependencies:
   - ca-certificates
   - certifi
   - openssl
+  - dvc
 prefix: /Users/haukeschulz/mambaforge/envs/era5
