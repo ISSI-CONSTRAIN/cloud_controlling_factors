@@ -1,4 +1,17 @@
+import argparse
+import os
+
 import cdsapi
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--output",
+    help="output filename",
+)
+args = parser.parse_args()
+
+if not os.path.exists(os.path.dirname(args.output)):
+    os.makedirs(os.path.dirname(args.output))
 
 c = cdsapi.Client()
 
@@ -59,5 +72,5 @@ c.retrieve(
             "2020",
         ],
     },
-    "download.nc",
+    args.output,
 )
