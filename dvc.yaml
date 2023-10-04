@@ -11,3 +11,10 @@ stages:
     - src/era5_download_pressurelev.py
     outs:
     - ./data/ERA5/ERA5_CCF_pressurelev.nc
+  create_ccf_dataset:
+    cmd: python src/postprocess_era5.py --input_sfc=./data/ERA5/ERA5_CCF_surface.nc --input_plev=./data/ERA5/ERA5_CCF_pressurelev.nc --output=./data/ERA5/ERA5_CCF.zarr
+    deps:
+    - src/postprocess_era5.py
+    - src/helpers.py
+    outs:
+    - ./data/ERA5/ERA5_CCF.zarr

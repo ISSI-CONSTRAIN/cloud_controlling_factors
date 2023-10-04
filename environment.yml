@@ -8,4 +8,9 @@ dependencies:
   - certifi
   - openssl
   - dvc
+  - xarray
+  - netcdf4
+  - zarr
+  - metpy
+  - pint-xarray
 prefix: /Users/haukeschulz/mambaforge/envs/era5
