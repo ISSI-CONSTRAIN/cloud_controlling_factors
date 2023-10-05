@@ -16,19 +16,16 @@ if not os.path.exists(os.path.dirname(args.output)):
 c = cdsapi.Client()
 
 c.retrieve(
-    "reanalysis-era5-single-levels",
+    "reanalysis-era5-pressure-levels",
     {
         "product_type": "reanalysis",
+        "format": "netcdf",
+        "pressure_level": "700",
         "variable": [
-            "10m_u_component_of_wind",
-            "10m_v_component_of_wind",
-            "2m_temperature",
-            "sea_surface_temperature",
-            "skin_temperature",
-            "surface_pressure",
-        ],
-        "year": [
-            "2020",
+            "geopotential",
+            "temperature",
+            "relative_humidity",
+            "vertical_velocity",
         ],
         "month": [
             "12",
@@ -65,12 +62,14 @@ c.retrieve(
             "22:00",
             "23:00",
         ],
-        "format": "netcdf",
         "area": [
             55,
             -90,
-            5,
             0,
+            0,
+        ],
+        "year": [
+            "2020",
         ],
     },
     args.output,

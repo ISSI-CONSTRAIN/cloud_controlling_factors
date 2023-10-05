@@ -1,0 +1,44 @@
+schema: '2.0'
+stages:
+  download_ERA5_CCF_sfc:
+    cmd: python src/era5_download_surface.py --output=./data/ERA5/ERA5_CCF_surface.nc
+    deps:
+    - path: src/era5_download_surface.py
+      hash: md5
+      md5: b79e10064b2b2b5cbe7eef64aa2eabe8
+      size: 1506
+    outs:
+    - path: ./data/ERA5/ERA5_CCF_surface.nc
+      hash: md5
+      md5: 135223bb12e5773bb23bd19c2b231298
+      size: 83595248
+  download_ERA5_CCF_plev:
+    cmd: python src/era5_download_pressurelev.py --output=./data/ERA5/ERA5_CCF_pressurelev.nc
+    deps:
+    - path: src/era5_download_pressurelev.py
+      hash: md5
+      md5: ffc43f68f54aa39377a6b88c381175f9
+      size: 1451
+    outs:
+    - path: ./data/ERA5/ERA5_CCF_pressurelev.nc
+      hash: md5
+      md5: 311bb64b12eec7b5928efa41a1a7e204
+      size: 61276504
+  create_ccf_dataset:
+    cmd: python src/postprocess_era5.py --input_sfc=./data/ERA5/ERA5_CCF_surface.nc
+      --input_plev=./data/ERA5/ERA5_CCF_pressurelev.nc --output=./data/ERA5/ERA5_CCF.zarr
+    deps:
+    - path: src/helpers.py
+      hash: md5
+      md5: c8c51ff45022ec4949afb4c01c5bebd5
+      size: 2642
+    - path: src/postprocess_era5.py
+      hash: md5
+      md5: b95aac38c59f7b0b7ed966c6a460fe57
+      size: 1213
+    outs:
+    - path: ./data/ERA5/ERA5_CCF.zarr
+      hash: md5
+      md5: 37483054cf461cc423447f102d434fdd.dir
+      size: 80968406
+      nfiles: 216

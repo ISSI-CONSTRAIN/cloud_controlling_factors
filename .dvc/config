@@ -1,0 +1,5 @@
+[core]
+    remote = telnyx
+['remote "telnyx"']
+    url = s3://constrain
+    endpointurl = https://storage.telnyx.com
