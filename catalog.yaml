@@ -1,0 +1,34 @@
+description: "ISSI Intake Data Catalog"
+
+plugins:
+  source:
+    - module: intake_xarray
+
+sources:
+  ERA5_CCF_sfc:
+    driver: netcdf
+    description: ERA5 surface data
+    args:
+      chunks: null
+      urlpath: s3://constrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
+      storage_options:
+        anon: false
+        endpoint_url: https://storage.telnyx.com
+      xarray_kwargs:
+        engine: h5netcdf
+  ERA5_CCF_sfc_aws:
+    driver: netcdf
+    description: ERA5 surface data
+    args:
+      chunks: null
+      urlpath: s3://cloudconstrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
+      storage_options:
+        anon: false
+  ERA5_CCF_sfc_aws_dvc:
+    driver: netcdf
+    description: ERA5 surface data
+    args:
+      chunks: null
+      urlpath: dvc://data/ERA5/ERA5_CCF_surface.nc
+      storage_options:
+        url: https://github.com/ISSI-CONSTRAIN/cloud_controlling_factors
