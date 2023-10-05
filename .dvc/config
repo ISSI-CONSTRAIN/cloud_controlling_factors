@@ -1,5 +1,9 @@
 [core]
-    remote = telnyx
+    remote = aws
+['remote "aws"']
+    url = s3://cloudconstrain
+    access_key_id = AKIARCRWSICXB2TUNJPN
+    secret_access_key = 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
 ['remote "telnyx"']
     url = s3://constrain
     endpointurl = https://storage.telnyx.com
