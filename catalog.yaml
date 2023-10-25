@@ -13,7 +13,7 @@ sources:
       urlpath: s3://constrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
       storage_options:
         anon: false
-        endpoint_url: https://storage.telnyx.com
+        endpoint_url: https://us-central-1.telnyx.com
       xarray_kwargs:
         engine: h5netcdf
   ERA5_CCF_sfc_aws:
