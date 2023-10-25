@@ -4,4 +4,4 @@
     url = s3://cloudconstrain
 ['remote "telnyx"']
     url = s3://constrain
-    endpointurl = https://storage.telnyx.com
+    endpointurl = https://us-central-1.telnyx.com
