@@ -23,7 +23,7 @@ sources:
       chunks: null
       urlpath: s3://cloudconstrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
       storage_options:
-        anon: false
+        anon: true
   ERA5_CCF_sfc_aws_dvc:
     driver: netcdf
     description: ERA5 surface data
@@ -33,6 +33,7 @@ sources:
       storage_options:
         url: https://github.com/ISSI-CONSTRAIN/cloud_controlling_factors
         rev: 720fe648ad480fdbc327539079359b0295680802
+        anon: true
   ERA5_CCF_aws_dvc:
     driver: zarr
     description: ERA5 CCF
@@ -40,3 +41,4 @@ sources:
       urlpath: dvc://data/ERA5/ERA5_CCF.zarr
       storage_options:
         url: https://github.com/ISSI-CONSTRAIN/cloud_controlling_factors
+        anon: true
