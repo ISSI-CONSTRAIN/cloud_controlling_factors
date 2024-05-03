@@ -5,40 +5,9 @@ plugins:
     - module: intake_xarray
 
 sources:
-  ERA5_CCF_sfc:
-    driver: netcdf
-    description: ERA5 surface data
-    args:
-      chunks: null
-      urlpath: s3://constrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
-      storage_options:
-        anon: false
-        endpoint_url: https://us-central-1.telnyxstorage.com
-      xarray_kwargs:
-        engine: h5netcdf
-  ERA5_CCF_sfc_aws:
-    driver: netcdf
-    description: ERA5 surface data
-    args:
-      chunks: null
-      urlpath: s3://cloudconstrain/files/md5/13/5223bb12e5773bb23bd19c2b231298
-      storage_options:
-        anon: true
-  ERA5_CCF_sfc_aws_dvc:
-    driver: netcdf
-    description: ERA5 surface data
-    args:
-      chunks: null
-      urlpath: dvc://data/ERA5/ERA5_CCF_surface.nc
-      storage_options:
-        url: https://github.com/ISSI-CONSTRAIN/cloud_controlling_factors
-        rev: 720fe648ad480fdbc327539079359b0295680802
-        anon: true
-  ERA5_CCF_aws_dvc:
+  ERA5_CCF:
     driver: zarr
-    description: ERA5 CCF
+    description: ERA5 cloud controlling factors
     args:
-      urlpath: dvc://data/ERA5/ERA5_CCF.zarr
-      storage_options:
-        url: https://github.com/ISSI-CONSTRAIN/cloud_controlling_factors
-        anon: true
+      urlpath: https://swift.dkrz.de/v1/dkrz_a88749b4-3884-49bb-8c65-76571c660914/ERA5_CCF/ERA5_CCF.zarr
+      consolidated: true
