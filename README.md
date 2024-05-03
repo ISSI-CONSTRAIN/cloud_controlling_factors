@@ -11,7 +11,7 @@ cat = intake.open_catalog("https://raw.githubusercontent.com/ISSI-CONSTRAIN/clou
 
 The cloud controling dataset of ERA5 can then be opened with
 ```python
-ds = cat['ERA5_CCF_aws_dvc']
+ds = cat['ERA5_CCF']
 ```
 
 ## Update CCFs
